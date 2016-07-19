@@ -43,7 +43,7 @@ public class User extends IdEntity implements Serializable {
 
 	//bi-directional many-to-one association to Eductation
 	@OneToMany(mappedBy="user")
-	private List<Eductation> eductations;
+	private List<Education> educations;
 
 	//bi-directional many-to-one association to Family
 	@OneToMany(mappedBy="user")
@@ -57,7 +57,7 @@ public class User extends IdEntity implements Serializable {
 	@OneToMany(mappedBy="user")
 	private List<UserActive> userActives;
 
-	//bi-directional many-to-one association to UserInfo
+	//bi-directional many-to-one association to UserInfoRepository
 	@OneToMany(mappedBy="user")
 	private List<UserInfo> userInfos;
 
@@ -144,26 +144,26 @@ public class User extends IdEntity implements Serializable {
 		this.userType = userType;
 	}
 
-	public List<Eductation> getEductations() {
-		return this.eductations;
+	public List<Education> getEducations() {
+		return this.educations;
 	}
 
-	public void setEductations(List<Eductation> eductations) {
-		this.eductations = eductations;
+	public void setEducations(List<Education> educations) {
+		this.educations = educations;
 	}
 
-	public Eductation addEductation(Eductation eductation) {
-		getEductations().add(eductation);
-		eductation.setUser(this);
+	public Education addEducation(Education education) {
+		getEducations().add(education);
+		education.setUser(this);
 
-		return eductation;
+		return education;
 	}
 
-	public Eductation removeEductation(Eductation eductation) {
-		getEductations().remove(eductation);
-		eductation.setUser(null);
+	public Education removeEducation(Education education) {
+		getEducations().remove(education);
+		education.setUser(null);
 
-		return eductation;
+		return education;
 	}
 
 	public List<Family> getFamilies() {

@@ -202,7 +202,11 @@
             <artifactId>spring-data-commons</artifactId>
             <version>1.11.2.RELEASE</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.3.6.Final</version>
+        </dependency>
     </dependencies>
 
     <build>
