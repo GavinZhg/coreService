@@ -1,9 +1,8 @@
 package com.x.user.repository;
 
 import com.x.user.entity.UserUsergrpEntity;
+import org.springframework.stereotype.Repository;
 
-/**
- * Created by Administrator on 2016/7/19.
- */
+@Repository
 public interface UserUsergrpRepository extends BaseRepository<UserUsergrpEntity> {
 }
