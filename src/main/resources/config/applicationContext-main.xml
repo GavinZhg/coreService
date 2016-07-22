@@ -66,7 +66,7 @@
     </bean>
    <!-- 开发环境 -->
     <beans profile="development">
-        <context:property-placeholder ignore-resource-not-found="true" location="classpath*:config/application.development.properties" />
+        <context:property-placeholder ignore-resource-not-found="true" location="classpath:/config/application.development.properties" />
         <!-- Spring Simple连接池 -->
         <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
             <property name="url" value="${jdbc.urlMaster}"/>
