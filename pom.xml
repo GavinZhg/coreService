@@ -10,7 +10,7 @@
     <properties>
         <spring.version>4.2.6.RELEASE</spring.version>
         <aspectj.version>1.6.12</aspectj.version>
-        <hibernate.version>5.0.4.Final</hibernate.version>
+        <hibernate.version>5.0.6.Final</hibernate.version>
     </properties>
     <dependencies>
         <dependency>
@@ -127,7 +127,6 @@
             <artifactId>logback-core</artifactId>
             <version>1.1.2</version>
         </dependency>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
@@ -138,6 +137,26 @@
             <artifactId>log4j-over-slf4j</artifactId>
             <version>1.7.13</version>
         </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+            <type>pom</type>
+        </dependency>
+        <!--aspectj-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- cglib、javassist、antlr -->
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
@@ -153,19 +172,6 @@
             <artifactId>antlr</artifactId>
             <version>2.7.7</version>
         </dependency>
-        <!-- aspectj,aspectrt -->
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>${aspectj.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>${aspectj.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-
         <!--common-->
         <dependency>
             <groupId>commons-io</groupId>
@@ -276,18 +282,6 @@
                     <artifactId>jboss-logging-annotations</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>org.hibernate.common</groupId>
-                    <artifactId>hibernate-commons-annotations</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.jboss.spec.javax.transaction</groupId>
-                    <artifactId>jboss-transaction-api_1.2_spec</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.hibernate.javax.persistence</groupId>
-                    <artifactId>hibernate-jpa-2.0-api</artifactId>
-                </exclusion>
-                <exclusion>
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-api</artifactId>
                 </exclusion>
@@ -300,6 +294,16 @@
                     <artifactId>antlr</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -348,7 +352,7 @@
         <finalName>user</finalName>
     </build>
 
-    <repositories>
+  <!-- <repositories>
     <repository>
         <id>mvn</id>
         <name>maven center</name>
@@ -360,7 +364,11 @@
             <enabled>false</enabled>
         </snapshots>
     </repository>
-
+    <repository>
+        <id>java</id>
+        <name>java official repository</name>
+        <url>http://download.java.net/maven/2/</url>
+    </repository>
     <repository>
         <id>nexus</id>
         <name>local private nexus</name>
@@ -448,5 +456,5 @@
                 <enabled>true</enabled>
             </snapshots>
         </pluginRepository>
-    </pluginRepositories>
+    </pluginRepositories>-->
 </project>
